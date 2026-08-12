@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/soluykqf/public_html/fit/
+    - /bin/cp -R ./* $DEPLOYPATH
