@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@500;600;700;800&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+<title>FIT by TOBURT — AI Food Scanning, Meal Planning &amp; Adaptive Workouts</title>
+<meta name="description" content="FIT by TOBURT is an AI health and fitness app: scan food labels for evidence-aware scores, turn approved meals into a real grocery list, and follow adaptive workouts. Private iPhone beta.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#123F35">
+<meta name="apple-mobile-web-app-title" content="FIT">
+<meta name="application-name" content="FIT by TOBURT">
+<link rel="canonical" href="https://fit.toburt.com/">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FIT by TOBURT">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://fit.toburt.com/">
+<meta property="og:title" content="FIT by TOBURT — Fuel with clarity. Train with purpose.">
+<meta property="og:description" content="Scan food, plan meals into a real grocery list, follow adaptive workouts, and track progress — with TOBURT as your AI coach. Private iPhone beta.">
+<meta property="og:image" content="https://fit.toburt.com/og.png">
+<meta property="og:image:secure_url" content="https://fit.toburt.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FIT by TOBURT — Fuel with clarity. Train with purpose.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FIT by TOBURT — Fuel with clarity. Train with purpose.">
+<meta name="twitter:description" content="AI food scanning, meal planning, adaptive workouts, and honest progress tracking. Private iPhone beta.">
+<meta name="twitter:image" content="https://fit.toburt.com/og.png">
+<meta name="twitter:image:alt" content="FIT by TOBURT — Fuel with clarity. Train with purpose.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://fit.toburt.com/#org","name":"TOBURT","url":"https://fit.toburt.com/","logo":"https://fit.toburt.com/brand/app-icon.png","email":"support@toburt.com","contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@toburt.com","availableLanguage":["en"]}]},
+{"@type":"WebSite","@id":"https://fit.toburt.com/#website","url":"https://fit.toburt.com/","name":"FIT by TOBURT","publisher":{"@id":"https://fit.toburt.com/#org"},"inLanguage":"en-US"},
+{"@type":"MobileApplication","@id":"https://fit.toburt.com/#app","name":"FIT by TOBURT","applicationCategory":"HealthApplication","applicationSubCategory":"Nutrition and fitness tracking","operatingSystem":"iOS","url":"https://fit.toburt.com/","image":"https://fit.toburt.com/og.png","publisher":{"@id":"https://fit.toburt.com/#org"},"softwareVersion":"1.0.0","releaseNotes":"Private iPhone beta. Subscriptions are disabled and no payment is taken during beta.","description":"FIT by TOBURT scans food labels for evidence-aware nutrition and processing context, plans meals into an exact pantry-aware grocery list, generates adaptive workouts around your real week, and tracks progress from weekly check-ins. TOBURT is the AI coach layer.","featureList":["Barcode, label, and produce scanning","Ingredient and processing evidence with confidence levels","Allergy and goal conflict checks","Weekly meal planning with recipe approval","Grocery aggregation with pantry, package, and leftover math","Adaptive workout generation from goals, equipment, and schedule","Live set logging with post-set effort feedback","Weekly check-ins and progress trends"],"isAccessibleForFree":true},
+{"@type":"FAQPage","@id":"https://fit.toburt.com/#faq","mainEntity":[
+{"@type":"Question","name":"What is FIT by TOBURT?","acceptedAnswer":{"@type":"Answer","text":"FIT is a connected food, nutrition, meal-planning, grocery, workout, and accountability app. TOBURT is the AI coach layer that plans workouts, explains ingredients, and responds to how each set felt."}},
+{"@type":"Question","name":"Can I download FIT right now?","acceptedAnswer":{"@type":"Answer","text":"FIT is in a private iPhone beta with invited testers. Request access at support@toburt.com to be considered for the current test group."}},
+{"@type":"Question","name":"How does FIT score food?","acceptedAnswer":{"@type":"Answer","text":"Each scan returns a serving-based food-quality score alongside separate nutrition, processing, and personal-fit scores, plus confidence and evidence labels. Your goals cannot inflate a product's underlying nutrition or processing score, and missing data stays missing rather than being invented."}},
+{"@type":"Question","name":"How does FIT handle allergies?","acceptedAnswer":{"@type":"Answer","text":"Saved allergens are cross-checked on every scan and conflicts stay prominent. Conflicts can change your personal verdict but never rewrite the objective nutrition calculation. Product databases can be incomplete or outdated, so always check the current physical package."}},
+{"@type":"Question","name":"Does FIT replace a doctor or dietitian?","acceptedAnswer":{"@type":"Answer","text":"No. FIT is a general-wellness and educational product. FIT and TOBURT are not doctors, registered dietitians, physical therapists, or emergency services. Stop exercising and seek qualified help for pain or concerning symptoms."}},
+{"@type":"Question","name":"What will FIT cost?","acceptedAnswer":{"@type":"Answer","text":"Planned tiers are FIT Free at $0, FIT Plus at $9.99 per month, and FIT Coach at $19.99 per month, with annual options. Pricing and AI allowances are research targets; subscriptions are disabled during beta and no payment is taken."}},
+{"@type":"Question","name":"Is my health data private?","acceptedAnswer":{"@type":"Answer","text":"Yes. Health, allergy, body-composition, food, and workout data are private by default and never published automatically. AI requests run through an authenticated server gateway, and account deletion is available in-app."}}]}
+]}
+</script>
+<script src="./image-slot.js"></script>
+<style>
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#f6f3ea;font-family:'Geist',ui-sans-serif,system-ui,sans-serif}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+  @keyframes typing{0%,100%{opacity:.25}50%{opacity:1}}
+</style>
+</helmet>
+
+<div style="background:#f6f3ea;color:#123f35;overflow-x:hidden">
+
+<div style="position:fixed;top:0;left:0;height:3px;width:0;background:#c7f25b;z-index:60" id="scroll-progress"></div>
+
+<header data-m="nav" style="position:sticky;top:0;z-index:50;background:rgba(8,44,37,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);height:78px">
+  <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+    <img src="assets/fit-mark.png" alt="" width="32" height="32" style="object-fit:contain"/>
+    <span style="display:flex;align-items:baseline;gap:6px">
+      <b style="color:#f6f3ea;font-size:20px;font-weight:800;letter-spacing:-.5px">FIT</b>
+      <small style="color:rgba(246,243,234,.55);font:700 9px 'Geist Mono',monospace;letter-spacing:1.4px">by TOBURT</small>
+    </span>
+  </a>
+  <nav aria-label="Primary" data-m="nav-links" style="display:flex;gap:24px;font-size:13.5px;font-weight:600">
+    <a href="#scan" data-nav="scan" style="color:rgba(246,243,234,.78);text-decoration:none;transition:color .25s" style-hover="color:#c7f25b">Scan</a>
+    <a href="#fuel" data-nav="fuel" style="color:rgba(246,243,234,.78);text-decoration:none;transition:color .25s" style-hover="color:#c7f25b">Fuel</a>
+    <a href="#train" data-nav="train" style="color:rgba(246,243,234,.78);text-decoration:none;transition:color .25s" style-hover="color:#c7f25b">Train</a>
+    <a href="#progress" data-nav="progress" style="color:rgba(246,243,234,.78);text-decoration:none;transition:color .25s" style-hover="color:#c7f25b">Progress</a>
+    <a href="#coach" data-nav="coach" style="color:rgba(246,243,234,.78);text-decoration:none;transition:color .25s" style-hover="color:#c7f25b">Coach</a>
+    <a href="#membership" data-nav="membership" style="color:rgba(246,243,234,.78);text-decoration:none;transition:color .25s" style-hover="color:#c7f25b">Membership</a>
+  </nav>
+  <a href="#beta" data-m="hide-phone" style="background:#c7f25b;color:#082c25;border-radius:8px;padding:11px 18px;font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap;transition:background .25s" style-hover="background:#dbfa8e">{{ ctaLabel }} ↗</a>
+  <button type="button" data-m="nav-toggle" onClick="{{ toggleMenu }}" aria-label="Toggle menu" style="display:none;cursor:pointer;background:transparent;border:1px solid rgba(255,255,255,.3);border-radius:8px;color:#f6f3ea;padding:9px 12px;font-size:15px;line-height:1;font-family:'Geist',sans-serif;font-weight:700">{{ menuIcon }}</button>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ true }}">
+  <div style="position:sticky;top:64px;z-index:49;background:#082c25;border-bottom:1px solid rgba(255,255,255,.1);padding:10px 18px 20px;display:flex;flex-direction:column;gap:2px">
+    <a href="#scan" onClick="{{ closeMenu }}" style="color:#f6f3ea;text-decoration:none;font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)">Scan</a>
+    <a href="#fuel" onClick="{{ closeMenu }}" style="color:#f6f3ea;text-decoration:none;font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)">Fuel</a>
+    <a href="#train" onClick="{{ closeMenu }}" style="color:#f6f3ea;text-decoration:none;font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)">Train</a>
+    <a href="#progress" onClick="{{ closeMenu }}" style="color:#f6f3ea;text-decoration:none;font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)">Progress</a>
+    <a href="#coach" onClick="{{ closeMenu }}" style="color:#f6f3ea;text-decoration:none;font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)">TOBURT Coach</a>
+    <a href="#membership" onClick="{{ closeMenu }}" style="color:#f6f3ea;text-decoration:none;font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)">Membership</a>
+    <a href="#faq" onClick="{{ closeMenu }}" style="color:#f6f3ea;text-decoration:none;font-size:16px;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07)">FAQ</a>
+    <a href="#beta" onClick="{{ closeMenu }}" style="margin-top:14px;background:#c7f25b;color:#082c25;border-radius:10px;padding:15px;text-align:center;font-size:15px;font-weight:800;text-decoration:none">{{ ctaLabel }} ↗</a>
+  </div>
+</sc-if>
+
+<section id="top" data-m="hero-section" style="position:relative;min-height:840px;overflow:hidden">
+  <div id="hero-photo-wrap" style="position:absolute;inset:-60px 0 0 0;z-index:0;will-change:transform">
+    <image-slot id="hero-gym-photo" shape="rect" src="assets/hero-gym.png" placeholder="Photo: person training in the gym" style="width:100%;height:100%;color:#f6f3ea"></image-slot>
+  </div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(8,44,37,.96) 0%,rgba(8,44,37,.86) 32%,rgba(8,44,37,.5) 56%,rgba(8,44,37,.12) 80%,rgba(8,44,37,.02) 100%)"></div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(8,44,37,.6) 0%,rgba(8,44,37,0) 34%)"></div>
+
+  <div data-m="hero-pad" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:140px clamp(20px,4vw,48px) 180px">
+    <div style="max-width:600px">
+      <div style="display:flex;align-items:center;gap:9px;font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#c7f25b">
+        <span style="width:8px;height:8px;border-radius:50%;background:#c7f25b;display:inline-block;animation:pulse 2s infinite"></span>
+        ONE ROUTINE. CLEARER CHOICES.
+      </div>
+      <h1 style="font-size:clamp(42px,6vw,78px);font-weight:800;letter-spacing:-2px;line-height:1.02;color:#f6f3ea;margin:22px 0 24px">
+        Fuel with clarity.<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#c7f25b">Train with purpose.</em>
+      </h1>
+      <p style="color:rgba(246,243,234,.85);font-size:18px;line-height:1.7;max-width:540px;margin:0">{{ heroSub }}</p>
+      <div style="display:flex;gap:12px;margin-top:34px;flex-wrap:wrap">
+        <a href="#beta" style="background:#c7f25b;color:#082c25;border-radius:8px;padding:16px 22px;font-size:14px;font-weight:800;text-decoration:none;transition:transform .2s,background .25s" style-hover="background:#dbfa8e;transform:translateY(-2px)">{{ ctaLabel }} ↗</a>
+        <a href="#scan" style="border:1px solid rgba(255,255,255,.35);color:#f6f3ea;border-radius:8px;padding:16px 22px;font-size:14px;font-weight:700;text-decoration:none;transition:border-color .25s,color .25s" style-hover="border-color:#c7f25b;color:#c7f25b">See how it works ↓</a>
+      </div>
+      <div style="display:flex;gap:26px;margin-top:32px;font:600 12px 'Geist Mono',monospace;color:rgba(246,243,234,.7);flex-wrap:wrap">
+        <span><span style="color:#c7f25b">✓</span> Evidence-aware</span>
+        <span><span style="color:#c7f25b">✓</span> Goal-specific</span>
+        <span><span style="color:#c7f25b">✓</span> Built for privacy</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-m="hero-card" style="position:absolute;z-index:3;right:clamp(20px,6vw,90px);bottom:80px;width:280px;background:#fffdf8;border-radius:24px;padding:20px;box-shadow:0 30px 70px rgba(8,44,37,.45)">
+    <div style="display:flex;justify-content:space-between;font:800 8px 'Geist Mono',monospace;letter-spacing:1px;color:#5b716a">
+      <span>TODAY · UPPER BODY</span><span style="color:#2e8767">SET 3 OF 4</span>
+    </div>
+    <div style="padding:14px 0 12px;border-bottom:1px solid #d9dfd9">
+      <strong style="display:block;font-size:16px">Bench Press</strong>
+      <p style="margin:3px 0 0;color:#5b716a;font:600 11px 'Geist Mono',monospace">8 reps @ 135 lb · rest 90s</p>
+    </div>
+    <div style="padding:14px 0 10px">
+      <b style="font-size:11.5px">How did that feel?</b>
+      <div style="display:flex;gap:6px;margin-top:9px;flex-wrap:wrap">
+        <span style="background:#c7f25b;color:#082c25;border-radius:7px;padding:6px 9px;font-size:10.5px;font-weight:700">Just right</span>
+        <span style="border:1px solid #d9dfd9;color:#5b716a;border-radius:7px;padding:6px 9px;font-size:10.5px">Difficult</span>
+      </div>
+    </div>
+    <div style="background:#123f35;color:#fff;border-radius:12px;padding:12px;font-size:11.5px;line-height:1.45">
+      <small style="display:block;font:800 7px 'Geist Mono',monospace;color:#c7f25b;letter-spacing:1px;margin-bottom:4px">TOBURT</small>Keep the weight. Aim for one clean rep more.
+    </div>
+  </div>
+
+  <div data-m="hide-phone" style="position:absolute;z-index:3;left:clamp(20px,4vw,48px);bottom:44px;font:700 11px 'Geist Mono',monospace;letter-spacing:2px;color:rgba(246,243,234,.6);display:flex;align-items:center;gap:10px">
+    <span style="animation:bob 2.4s infinite">↓</span> SCROLL
+  </div>
+</section>
+
+<div style="background:#082c25;border-top:1px solid rgba(199,242,91,.2);border-bottom:1px solid rgba(199,242,91,.2);overflow:hidden;padding:14px 0">
+  <div style="display:flex;width:max-content;animation:marquee 32s linear infinite">
+    <div style="display:flex;gap:40px;padding-right:40px;font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:rgba(246,243,234,.55);white-space:nowrap">
+      <span>SCAN A LABEL</span><span style="color:#c7f25b">●</span><span>APPROVE THE PLAN</span><span style="color:#c7f25b">●</span><span>BUILD THE LIST</span><span style="color:#c7f25b">●</span><span>TRAIN THE WEEK</span><span style="color:#c7f25b">●</span><span>LOG WHAT HAPPENED</span><span style="color:#c7f25b">●</span><span>ADAPT WITH CONTEXT</span><span style="color:#c7f25b">●</span>
+    </div>
+    <div style="display:flex;gap:40px;padding-right:40px;font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:rgba(246,243,234,.55);white-space:nowrap">
+      <span>SCAN A LABEL</span><span style="color:#c7f25b">●</span><span>APPROVE THE PLAN</span><span style="color:#c7f25b">●</span><span>BUILD THE LIST</span><span style="color:#c7f25b">●</span><span>TRAIN THE WEEK</span><span style="color:#c7f25b">●</span><span>LOG WHAT HAPPENED</span><span style="color:#c7f25b">●</span><span>ADAPT WITH CONTEXT</span><span style="color:#c7f25b">●</span>
+    </div>
+  </div>
+</div>
+
+<section style="padding:88px clamp(20px,4vw,48px) 40px">
+  <div style="max-width:1280px;margin:0 auto" data-reveal data-m="split">
+    <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">THE SYSTEM</span>
+    <h2 style="font-size:clamp(32px,4vw,50px);font-weight:800;letter-spacing:-1.6px;margin:14px 0 40px;line-height:1.04">Four parts.<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">One connected routine.</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
+      <a href="#scan" style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:18px;padding:26px;text-decoration:none;color:#123f35;transition:transform .25s,border-color .25s,box-shadow .25s" style-hover="transform:translateY(-5px);border-color:#2e8767;box-shadow:0 18px 40px rgba(18,63,53,.12)">
+        <span style="font:800 12px 'Geist Mono',monospace;color:#2e8767">01</span>
+        <h3 style="font-size:19px;font-weight:800;margin:12px 0 8px;letter-spacing:-.3px">FIT Scan</h3>
+        <p style="margin:0 0 14px;color:#5b716a;font-size:13.5px;line-height:1.55">Food scores with real context — not a single verdict.</p>
+        <span style="font:700 12px 'Geist Mono',monospace">Explore ↓</span>
+      </a>
+      <a href="#fuel" style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:18px;padding:26px;text-decoration:none;color:#123f35;transition:transform .25s,border-color .25s,box-shadow .25s" style-hover="transform:translateY(-5px);border-color:#2e8767;box-shadow:0 18px 40px rgba(18,63,53,.12)">
+        <span style="font:800 12px 'Geist Mono',monospace;color:#2e8767">02</span>
+        <h3 style="font-size:19px;font-weight:800;margin:12px 0 8px;letter-spacing:-.3px">FIT Fuel</h3>
+        <p style="margin:0 0 14px;color:#5b716a;font-size:13.5px;line-height:1.55">Meals that become an exact, pantry-aware grocery list.</p>
+        <span style="font:700 12px 'Geist Mono',monospace">Explore ↓</span>
+      </a>
+      <a href="#train" style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:18px;padding:26px;text-decoration:none;color:#123f35;transition:transform .25s,border-color .25s,box-shadow .25s" style-hover="transform:translateY(-5px);border-color:#2e8767;box-shadow:0 18px 40px rgba(18,63,53,.12)">
+        <span style="font:800 12px 'Geist Mono',monospace;color:#2e8767">03</span>
+        <h3 style="font-size:19px;font-weight:800;margin:12px 0 8px;letter-spacing:-.3px">FIT Train</h3>
+        <p style="margin:0 0 14px;color:#5b716a;font-size:13.5px;line-height:1.55">Adaptive workouts built around your actual week.</p>
+        <span style="font:700 12px 'Geist Mono',monospace">Explore ↓</span>
+      </a>
+      <a href="#progress" style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:18px;padding:26px;text-decoration:none;color:#123f35;transition:transform .25s,border-color .25s,box-shadow .25s" style-hover="transform:translateY(-5px);border-color:#2e8767;box-shadow:0 18px 40px rgba(18,63,53,.12)">
+        <span style="font:800 12px 'Geist Mono',monospace;color:#2e8767">04</span>
+        <h3 style="font-size:19px;font-weight:800;margin:12px 0 8px;letter-spacing:-.3px">FIT Progress</h3>
+        <p style="margin:0 0 14px;color:#5b716a;font-size:13.5px;line-height:1.55">One connected view of meals, workouts, and trends.</p>
+        <span style="font:700 12px 'Geist Mono',monospace">Explore ↓</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="scan" style="padding:64px clamp(20px,4vw,48px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center" data-reveal data-m="split">
+    <div>
+      <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">01 · FIT SCAN</span>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-1.3px;margin:14px 0 22px;line-height:1.06">Know exactly<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">what you're eating.</em></h2>
+      <p style="color:#5b716a;font-size:15.5px;line-height:1.7;margin:0 0 24px;max-width:520px">Scan a barcode or a label and FIT separates what the food is from how it fits you. Try a product to see how the result changes.</p>
+      <div style="display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap">
+        <sc-for list="{{ products }}" as="p" hint-placeholder-count="3">
+          <button type="button" data-chip="product" data-m="tap" onClick="{{ p.select }}" style="cursor:pointer;border:1px solid #d9dfd9;background:transparent;color:#123f35;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;font-family:'Geist',sans-serif;transition:all .2s">{{ p.chip }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">01</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Barcode, label &amp; produce entry</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Camera scanning, manual barcode numbers, produce PLUs, or a typed ingredient label — including while you shop.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">02</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Ingredient &amp; processing evidence</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Tap any ingredient for a plain-language explanation with evidence strength and confidence. Missing data stays missing — never invented.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9;border-bottom:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">03</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Allergy &amp; goal conflict checks</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Conflicts stay prominent and can change your personal verdict — but they never rewrite the product's objective nutrition score.</p></div>
+      </div>
+    </div>
+    <div data-m="visual" style="position:relative;min-height:600px">
+      <div data-m="visual-photo" style="position:absolute;top:0;right:0;left:70px;bottom:70px;border-radius:26px;overflow:hidden;box-shadow:0 30px 70px rgba(18,63,53,.2)">
+        <image-slot id="photo-scan" shape="rect" src="assets/scan.png" placeholder="Photo: scanning a product barcode in the grocery aisle" style="width:100%;height:100%"></image-slot>
+      </div>
+      <div data-m="visual-card" style="position:absolute;left:0;bottom:0;width:310px;background:#fffdf8;border-radius:22px;padding:20px;box-shadow:0 26px 60px rgba(18,63,53,.28)">
+        <div style="display:flex;justify-content:space-between;font:800 8px 'Geist Mono',monospace;letter-spacing:1px;color:#5b716a">
+          <span>PRODUCT RESULT</span><span style="color:#2e8767">● {{ product.confidence }}</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;padding:15px 0 12px;border-bottom:1px solid #d9dfd9">
+          <div data-mark style="width:42px;height:54px;border-radius:8px 8px 12px 12px;background:linear-gradient(#c84d37 14%,#e7b66b 14%);display:grid;place-items:center;color:#fff;font-weight:800;font-size:11px">{{ product.mark }}</div>
+          <div>
+            <small style="color:#2e8767;font-size:7.5px;font-weight:800;letter-spacing:.5px">{{ product.brand }}</small>
+            <strong style="display:block;font-size:15px;margin:3px 0">{{ product.verdict }}</strong>
+            <p style="margin:0;color:#5b716a;font-size:8.5px">Food quality and personal fit stay separate.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:13px 0">
+          <div data-score style="width:52px;height:52px;border-radius:50%;background:#f8db76;display:grid;place-items:center;font-weight:900;font-size:20px;transition:background .3s">{{ product.score }}<small style="font-size:6px;margin-top:-13px">/100</small></div>
+          <div><b style="font-size:10.5px">Useful — not absolute.</b><p style="margin:0;color:#5b716a;font-size:8px">See what raised or lowered the result.</p></div>
+        </div>
+        <sc-for list="{{ product.meters }}" as="m" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:96px 1fr 32px;align-items:center;gap:9px;margin-bottom:9px;font:700 9.5px 'Geist Mono',monospace;color:#5b716a">
+            <span>{{ m.label }}</span>
+            <div style="background:#e7ebe7;border-radius:8px;height:7px;position:relative"><i data-fill style="position:absolute;top:0;left:0;bottom:0;width:0%;background:#2e8767;border-radius:8px"></i></div>
+            <b style="text-align:right;color:#123f35">{{ m.pct }}</b>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid #d9dfd9;margin-top:12px;padding-top:12px;display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ product.findings }}" as="f" hint-placeholder-count="3">
+            <div style="display:flex;gap:8px;font-size:10.5px;line-height:1.45"><b data-find style="color:#2e8767;font-family:'Geist Mono',monospace">{{ f.tone }}</b><span style="color:#123f35">{{ f.text }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fuel" style="padding:64px clamp(20px,4vw,48px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center" data-reveal data-m="split">
+    <div data-m="visual" style="position:relative;min-height:600px">
+      <div data-m="visual-photo" style="position:absolute;top:0;left:0;right:70px;bottom:70px;border-radius:26px;overflow:hidden;box-shadow:0 30px 70px rgba(18,63,53,.2)">
+        <image-slot id="photo-fuel" shape="rect" src="assets/fuel.png" placeholder="Photo: kitchen counter with prepped meals and groceries" style="width:100%;height:100%"></image-slot>
+      </div>
+      <div data-m="visual-card" style="position:absolute;right:0;bottom:0;width:320px;background:#fffdf8;border-radius:22px;padding:20px;box-shadow:0 26px 60px rgba(18,63,53,.28)">
+        <div style="display:flex;justify-content:space-between;font:800 8px 'Geist Mono',monospace;letter-spacing:1px;color:#5b716a">
+          <span>THIS WEEK'S PLAN</span><span style="color:#2e8767">7 DAYS · APPROVED</span>
+        </div>
+        <div style="display:flex;gap:5px;padding:14px 0;flex-wrap:wrap">
+          <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+            <button type="button" data-chip="day" data-m="day-chip" onClick="{{ d.select }}" style="cursor:pointer;border:1px solid #d9dfd9;background:transparent;color:#5b716a;border-radius:8px;padding:6px 9px;font:800 9px 'Geist Mono',monospace;transition:all .2s">{{ d.d }}</button>
+          </sc-for>
+        </div>
+        <div style="border-top:1px solid #d9dfd9;padding:13px 0">
+          <small style="color:#2e8767;font-size:8px;font-weight:800;letter-spacing:.5px">{{ day.slot }} · {{ day.d }}</small>
+          <strong style="display:block;font-size:15.5px;margin:3px 0">{{ day.meal }}</strong>
+          <p style="margin:0;color:#5b716a;font:600 10.5px 'Geist Mono',monospace">{{ day.macros }}</p>
+        </div>
+        <div style="border-top:1px solid #d9dfd9;padding:12px 0;display:flex;flex-direction:column;gap:7px;font-size:12px">
+          <sc-for list="{{ day.items }}" as="i" hint-placeholder-count="3">
+            <div data-item style="display:flex;gap:8px;color:#123f35"><span>{{ i.box }}</span><span>{{ i.t }}</span></div>
+          </sc-for>
+        </div>
+        <div style="border-top:1px solid #d9dfd9;padding-top:11px;font:700 9.5px 'Geist Mono',monospace;color:#5b716a">{{ day.packages }}</div>
+        <div style="background:#123f35;color:#fff;border-radius:12px;padding:12px;text-align:center;font:800 9px 'Geist Mono',monospace;letter-spacing:.5px;margin-top:12px">SEND TO GROCERY LIST <span style="color:#c7f25b">↗</span></div>
+      </div>
+    </div>
+    <div>
+      <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">02 · FIT FUEL</span>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-1.3px;margin:14px 0 22px;line-height:1.06">Meals that become<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">a real grocery list.</em></h2>
+      <p style="color:#5b716a;font-size:15.5px;line-height:1.7;margin:0 0 24px;max-width:520px">Seven dated days, three slots each, filtered to your diet and scaled to your household. Tap through the week to see how a plan turns into quantities.</p>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">01</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Approve before it counts</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Suggested recipes wait for your yes. Only accepted meals reach the calendar and the grocery calculation.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">02</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Aggregation that respects units</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Duplicate ingredients combine, incompatible units stay separate, and FIT asks rather than inventing a conversion.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9;border-bottom:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">03</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Pantry, packages &amp; store memory</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Pantry quantities are subtracted, package counts and leftovers are calculated, and your preferred store, aisle, and shelf notes stay private.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="train" style="padding:64px clamp(20px,4vw,48px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center" data-reveal data-m="split">
+    <div>
+      <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">03 · FIT TRAIN</span>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-1.3px;margin:14px 0 22px;line-height:1.06">A plan built around<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">your actual week.</em></h2>
+      <p style="color:#5b716a;font-size:15.5px;line-height:1.7;margin:0 0 24px;max-width:520px">Pick how the set felt and watch what TOBURT does with it. Advice changes the next set — never the whole program — and pain always stops the exercise.</p>
+      <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
+        <sc-for list="{{ efforts }}" as="e" hint-placeholder-count="4">
+          <button type="button" data-chip="effort" data-m="tap" onClick="{{ e.select }}" style="cursor:pointer;border:1px solid #d9dfd9;background:transparent;color:#123f35;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;font-family:'Geist',sans-serif;transition:all .2s">{{ e.label }}</button>
+        </sc-for>
+      </div>
+      <div data-effort-box style="background:#eef4ec;border:1px solid #cfe0d6;border-radius:16px;padding:18px 20px;margin-bottom:26px;transition:background .3s">
+        <small data-effort-label style="display:block;font:800 9px 'Geist Mono',monospace;color:#2e8767;letter-spacing:1.4px;margin-bottom:6px">{{ effortLabel }}</small>
+        <b data-effort-text style="font-size:15px;line-height:1.5;color:#123f35">{{ effortReply }}</b>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">01</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Adaptive workout generation</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Built from your goals, experience, gym, equipment, and limitations — with exactly the number of training days you selected, from an approved exercise registry.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9;border-bottom:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">02</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Live set logging &amp; effort feedback</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Target, weight, reps, and completion save as you go. Drafts persist mid-workout; completion stores duration, effort, and exercise detail.</p></div>
+      </div>
+    </div>
+    <div data-m="visual" style="position:relative;min-height:600px">
+      <div data-m="visual-photo" style="position:absolute;top:0;right:0;left:70px;bottom:70px;border-radius:26px;overflow:hidden;box-shadow:0 30px 70px rgba(18,63,53,.2)">
+        <image-slot id="photo-train" shape="rect" src="assets/train.png" placeholder="Photo: mid-set dumbbell or barbell work on the gym floor" style="width:100%;height:100%"></image-slot>
+      </div>
+      <div data-m="visual-card" style="position:absolute;left:0;bottom:0;width:310px;background:#fffdf8;border-radius:22px;padding:20px;box-shadow:0 26px 60px rgba(18,63,53,.28)">
+        <div style="display:flex;justify-content:space-between;font:800 8px 'Geist Mono',monospace;letter-spacing:1px;color:#5b716a"><span>TODAY'S SESSION</span><span style="color:#2e8767">UPPER BODY · 48 MIN</span></div>
+        <div style="padding:14px 0;border-bottom:1px solid #d9dfd9;font-size:13px">
+          <div style="display:flex;justify-content:space-between;padding:6px 0"><span style="font-weight:700">Bench Press</span><span style="color:#5b716a;font:600 11.5px 'Geist Mono',monospace">4×8 · 135 lb</span></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0"><span style="font-weight:700">Barbell Row</span><span style="color:#5b716a;font:600 11.5px 'Geist Mono',monospace">4×10 · 95 lb</span></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0"><span style="font-weight:700">Overhead Press</span><span style="color:#5b716a;font:600 11.5px 'Geist Mono',monospace">3×10 · 65 lb</span></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0"><span style="font-weight:700">Lat Pulldown</span><span style="color:#5b716a;font:600 11.5px 'Geist Mono',monospace">3×12 · 90 lb</span></div>
+        </div>
+        <div style="padding:14px 0 10px">
+          <b style="font-size:12px">Set 3 of 4 — Bench Press</b>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;text-align:center">
+            <div style="border:1px solid #d9dfd9;border-radius:10px;padding:9px"><small style="display:block;font:700 7.5px 'Geist Mono',monospace;color:#5b716a">TARGET</small><b style="font-size:13px">8 reps</b></div>
+            <div style="border:1px solid #d9dfd9;border-radius:10px;padding:9px"><small style="display:block;font:700 7.5px 'Geist Mono',monospace;color:#5b716a">WEIGHT</small><b style="font-size:13px">135 lb</b></div>
+            <div style="border:1px solid #2e8767;background:#eef4ec;border-radius:10px;padding:9px"><small style="display:block;font:700 7.5px 'Geist Mono',monospace;color:#2e8767">DONE</small><b style="font-size:13px">8 reps</b></div>
+          </div>
+        </div>
+        <div data-effort-card style="background:#123f35;color:#fffdf8;border-radius:12px;padding:12px;font-size:11.5px;line-height:1.45;transition:background .3s">
+          <small data-effort-card-label style="display:block;font:800 7.5px 'Geist Mono',monospace;color:#c7f25b;letter-spacing:1px;margin-bottom:4px">TOBURT</small>{{ effortReply }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="progress" style="padding:64px clamp(20px,4vw,48px) 90px">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center" data-reveal data-m="split">
+    <div data-m="visual" style="position:relative;min-height:600px">
+      <div data-m="visual-photo" style="position:absolute;top:0;left:0;right:70px;bottom:70px;border-radius:26px;overflow:hidden;box-shadow:0 30px 70px rgba(18,63,53,.2)">
+        <image-slot id="photo-progress" shape="rect" src="assets/progress.png" placeholder="Photo: weekly check-in at home — notes, scale, tape measure" style="width:100%;height:100%"></image-slot>
+      </div>
+      <div data-m="visual-card" style="position:absolute;right:0;bottom:0;width:320px;background:#fffdf8;border-radius:22px;padding:20px;box-shadow:0 26px 60px rgba(18,63,53,.28)">
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+          <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3">
+            <button type="button" data-chip="metric" data-m="tap" onClick="{{ m.select }}" style="cursor:pointer;border:1px solid #d9dfd9;background:transparent;color:#123f35;border-radius:999px;padding:7px 13px;font-size:11.5px;font-weight:700;font-family:'Geist',sans-serif;transition:all .2s">{{ m.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="font-size:26px;font-weight:800;letter-spacing:-.8px">{{ metric.delta }}</b>
+          <span style="font:700 9px 'Geist Mono',monospace;color:#2e8767">8-WEEK TREND</span>
+        </div>
+        <p style="margin:4px 0 0;color:#5b716a;font-size:11.5px">{{ metric.sub }}</p>
+        <div style="display:flex;align-items:flex-end;gap:6px;height:78px;padding:18px 0 10px">
+          <sc-for list="{{ metric.bars }}" as="b" hint-placeholder-count="8">
+            <i data-bar style="flex:1;background:#c2d9cd;border-radius:4px 4px 0 0;height:10%"></i>
+          </sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #d9dfd9;padding:13px 0;font-size:11px">
+          <div><b style="display:block;font-size:14px">Wk 1</b><span style="color:#5b716a">Started</span></div>
+          <div><b style="display:block;font-size:14px">Wk 8</b><span style="color:#5b716a">Now</span></div>
+          <div><b style="display:block;font-size:14px">4/4</b><span style="color:#5b716a">Check-ins</span></div>
+        </div>
+        <div style="border-top:1px solid #d9dfd9;padding-top:12px;font:700 9.5px 'Geist Mono',monospace;color:#5b716a">ENTERED BY YOU · ESTIMATES LABELLED AS ESTIMATES</div>
+      </div>
+    </div>
+    <div>
+      <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">04 · FIT PROGRESS</span>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-1.3px;margin:14px 0 22px;line-height:1.06">One view of<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">the whole routine.</em></h2>
+      <p style="color:#5b716a;font-size:15.5px;line-height:1.7;margin:0 0 24px;max-width:520px">Switch the metric and watch the same eight weeks tell a different part of the story. No single number becomes the whole picture.</p>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">01</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Weekly check-ins</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Weight, body fat, muscle mass, body water, waist, energy, sleep quality, stress, and notes — recorded by you, on your schedule.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid #d9dfd9;border-bottom:1px solid #d9dfd9">
+        <span style="font:800 13px 'Geist Mono',monospace;color:#2e8767;flex:0 0 26px">02</span>
+        <div><h4 style="margin:0 0 5px;font-size:16.5px;font-weight:800;letter-spacing:-.2px">Conservative adaptation</h4><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Completion summaries and trends feed the next plan review. Estimated workout calories are always labelled as estimates.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="coach" style="background:#082c25;padding:96px clamp(20px,4vw,48px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center" data-reveal data-m="split">
+    <div data-m="visual" style="position:relative;min-height:520px">
+      <div data-m="visual-photo" style="position:absolute;inset:0 60px 60px 0;border-radius:26px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.4)">
+        <image-slot id="photo-coach" shape="rect" src="assets/coach.png" placeholder="Photo: athlete resting between sets, checking their phone" style="width:100%;height:100%;color:#f6f3ea"></image-slot>
+      </div>
+      <div data-m="visual-card" style="position:absolute;right:0;bottom:0;width:300px;background:#0d3a31;border:1px solid rgba(199,242,91,.22);border-radius:22px;padding:18px;box-shadow:0 30px 60px rgba(0,0,0,.45)">
+        <div style="display:flex;align-items:center;gap:9px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <span style="width:8px;height:8px;border-radius:50%;background:#c7f25b;animation:pulse 2s infinite"></span>
+          <b style="color:#f6f3ea;font-size:12.5px">TOBURT Coach</b>
+          <small style="margin-left:auto;font:700 8px 'Geist Mono',monospace;color:rgba(246,243,234,.45);letter-spacing:1px">LIVE SET</small>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px;padding-top:12px;min-height:230px">
+          <sc-for list="{{ chatVisible }}" as="c" hint-placeholder-count="4">
+            <div data-chat style="align-self:flex-start;max-width:88%;background:#123f35;border:1px solid rgba(199,242,91,.25);color:#f6f3ea;border-radius:14px;padding:10px 12px;font-size:11.5px;line-height:1.45">
+              <small data-chat-label style="display:block;font:800 7px 'Geist Mono',monospace;color:#c7f25b;letter-spacing:1px;margin-bottom:3px">{{ c.who }}</small>{{ c.text }}
+            </div>
+          </sc-for>
+          <sc-if value="{{ chatTyping }}" hint-placeholder-val="{{ true }}">
+            <div style="align-self:flex-start;display:flex;gap:4px;padding:8px 12px;background:#123f35;border-radius:14px">
+              <span style="width:5px;height:5px;border-radius:50%;background:#c7f25b;animation:typing 1.1s infinite"></span>
+              <span style="width:5px;height:5px;border-radius:50%;background:#c7f25b;animation:typing 1.1s infinite .2s"></span>
+              <span style="width:5px;height:5px;border-radius:50%;background:#c7f25b;animation:typing 1.1s infinite .4s"></span>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#c7f25b">TOBURT COACH</span>
+      <h2 style="font-size:clamp(30px,3.8vw,48px);font-weight:800;letter-spacing:-1.4px;color:#f6f3ea;margin:14px 0 22px;line-height:1.08">Intelligence that listens <em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#c7f25b">between sets.</em></h2>
+      <p style="color:rgba(246,243,234,.75);font-size:16px;line-height:1.7;max-width:520px;margin:0 0 26px">TOBURT uses the profile, plan, and feedback you choose to share. Requests run through an authenticated gateway with server-side limits — the phone never holds the keys.</p>
+      <ul style="list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:14px">
+        <li style="display:flex;gap:12px;color:#f6f3ea;font-size:14.5px;line-height:1.5"><span style="color:#c7f25b;font:800 12px 'Geist Mono',monospace;flex:0 0 20px">01</span>Plans around your goals, equipment, and limitations</li>
+        <li style="display:flex;gap:12px;color:#f6f3ea;font-size:14.5px;line-height:1.5"><span style="color:#c7f25b;font:800 12px 'Geist Mono',monospace;flex:0 0 20px">02</span>Checks effort, completion, and discomfort after every set</li>
+        <li style="display:flex;gap:12px;color:#f6f3ea;font-size:14.5px;line-height:1.5"><span style="color:#c7f25b;font:800 12px 'Geist Mono',monospace;flex:0 0 20px">03</span>Keeps pain and emergency guidance deterministic — never AI-dependent</li>
+        <li style="display:flex;gap:12px;color:#f6f3ea;font-size:14.5px;line-height:1.5"><span style="color:#c7f25b;font:800 12px 'Geist Mono',monospace;flex:0 0 20px">04</span>Falls back to conservative plans when AI is unavailable</li>
+      </ul>
+      <small style="color:rgba(246,243,234,.5);font-size:12px;line-height:1.6;display:block;max-width:500px">FIT provides general wellness education, not medical care. Stop exercising and seek appropriate help for concerning symptoms.</small>
+    </div>
+  </div>
+</section>
+
+<section style="padding:90px clamp(20px,4vw,48px) 30px">
+  <div style="max-width:1280px;margin:0 auto" data-reveal data-m="split">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px">
+      <div>
+        <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">BUILT AROUND YOUR OUTCOME</span>
+        <h2 style="font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1.5px;margin:14px 0 0;line-height:1.06">Pick one goal.<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">Or several at once.</em></h2>
+      </div>
+      <p style="color:#5b716a;font-size:14.5px;max-width:330px;margin:0">Balanced health, weight change, muscle, or endurance — FIT runs several outcomes together and keeps them from fighting each other.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
+      <div style="border-radius:20px;overflow:hidden;background:#fffdf8;border:1px solid #d9dfd9;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(18,63,53,.14)">
+        <div style="height:340px"><image-slot id="goal-1" shape="rect" src="assets/goal-balanced.png" placeholder="Portrait: member training for balanced health" style="width:100%;height:100%"></image-slot></div>
+        <div style="padding:20px"><span style="font:800 10px 'Geist Mono',monospace;color:#2e8767;letter-spacing:1.4px">OUTCOME 01</span><h3 style="font-size:17px;font-weight:800;margin:9px 0 6px">Balanced health</h3><p style="margin:0;color:#5b716a;font-size:13px;line-height:1.55">Gut health, more fiber, less sugar, less processing.</p></div>
+      </div>
+      <div style="border-radius:20px;overflow:hidden;background:#fffdf8;border:1px solid #d9dfd9;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(18,63,53,.14)">
+        <div style="height:340px"><image-slot id="goal-2" shape="rect" src="assets/goal-weight.png" placeholder="Portrait: member focused on weight change" style="width:100%;height:100%"></image-slot></div>
+        <div style="padding:20px"><span style="font:800 10px 'Geist Mono',monospace;color:#2e8767;letter-spacing:1.4px">OUTCOME 02</span><h3 style="font-size:17px;font-weight:800;margin:9px 0 6px">Lose or maintain</h3><p style="margin:0;color:#5b716a;font-size:13px;line-height:1.55">Portion clarity and trends without a shame spiral.</p></div>
+      </div>
+      <div style="border-radius:20px;overflow:hidden;background:#fffdf8;border:1px solid #d9dfd9;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(18,63,53,.14)">
+        <div style="height:340px"><image-slot id="goal-3" shape="rect" src="assets/goal-muscle.png" placeholder="Portrait: member building muscle with weights" style="width:100%;height:100%"></image-slot></div>
+        <div style="padding:20px"><span style="font:800 10px 'Geist Mono',monospace;color:#2e8767;letter-spacing:1.4px">OUTCOME 03</span><h3 style="font-size:17px;font-weight:800;margin:9px 0 6px">Build muscle</h3><p style="margin:0;color:#5b716a;font-size:13px;line-height:1.55">Progressive sets, protein targets, honest recovery.</p></div>
+      </div>
+      <div style="border-radius:20px;overflow:hidden;background:#fffdf8;border:1px solid #d9dfd9;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-5px);box-shadow:0 18px 40px rgba(18,63,53,.14)">
+        <div style="height:340px"><image-slot id="goal-4" shape="rect" src="assets/goal-endurance.png" placeholder="Portrait: member training endurance — run or row" style="width:100%;height:100%"></image-slot></div>
+        <div style="padding:20px"><span style="font:800 10px 'Geist Mono',monospace;color:#2e8767;letter-spacing:1.4px">OUTCOME 04</span><h3 style="font-size:17px;font-weight:800;margin:9px 0 6px">Improve endurance</h3><p style="margin:0;color:#5b716a;font-size:13px;line-height:1.55">Sessions that fit the week you actually have.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px clamp(20px,4vw,48px)">
+  <div style="max-width:1280px;margin:0 auto" data-reveal data-m="split">
+    <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">A ROUTINE THAT LEARNS</span>
+    <h2 style="font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1.5px;margin:14px 0 40px;line-height:1.06">Start with you.<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">Improve from reality.</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px">
+      <div style="border-top:2px solid #123f35;padding-top:18px"><b style="font:800 22px 'Geist Mono',monospace;color:#2e8767">01</b><h3 style="font-size:18px;font-weight:800;margin:12px 0 8px;letter-spacing:-.2px">Set your profile</h3><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Goals, schedule, experience, allergens, gym, equipment, and limitations.</p></div>
+      <div style="border-top:2px solid #123f35;padding-top:18px"><b style="font:800 22px 'Geist Mono',monospace;color:#2e8767">02</b><h3 style="font-size:18px;font-weight:800;margin:12px 0 8px;letter-spacing:-.2px">Approve your plan</h3><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Review meals and workouts before they land on your calendar.</p></div>
+      <div style="border-top:2px solid #123f35;padding-top:18px"><b style="font:800 22px 'Geist Mono',monospace;color:#2e8767">03</b><h3 style="font-size:18px;font-weight:800;margin:12px 0 8px;letter-spacing:-.2px">Log what happened</h3><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">Meals, sets, effort, measurements, and weekly check-ins.</p></div>
+      <div style="border-top:2px solid #123f35;padding-top:18px"><b style="font:800 22px 'Geist Mono',monospace;color:#2e8767">04</b><h3 style="font-size:18px;font-weight:800;margin:12px 0 8px;letter-spacing:-.2px">Adapt with context</h3><p style="margin:0;color:#5b716a;font-size:14px;line-height:1.6">TOBURT suggests the next sensible step from your selected history.</p></div>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showMembership }}" hint-placeholder-val="{{ true }}">
+<section id="membership" style="padding:40px clamp(20px,4vw,48px) 100px">
+  <div style="max-width:1280px;margin:0 auto" data-reveal data-m="split">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px;flex-wrap:wrap">
+      <div>
+        <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">PLANNED MEMBERSHIPS</span>
+        <h2 style="font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1.5px;margin:14px 0 0;line-height:1.06">Start simple.<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">Coach when ready.</em></h2>
+      </div>
+      <div>
+        <div style="display:inline-flex;background:#eef4ec;border-radius:999px;padding:4px;margin-bottom:14px">
+          <button type="button" data-chip="billing" data-m="tap" onClick="{{ setMonthly }}" style="cursor:pointer;border:0;border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:700;font-family:'Geist',sans-serif;background:#123f35;color:#fffdf8;transition:all .2s">Monthly</button>
+          <button type="button" data-chip="billing" data-m="tap" onClick="{{ setAnnual }}" style="cursor:pointer;border:0;border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:700;font-family:'Geist',sans-serif;background:transparent;color:#123f35;transition:all .2s">Annual</button>
+        </div>
+        <p style="color:#5b716a;font-size:14px;max-width:330px;margin:0">Beta access is free today. Prices and AI allowances are research targets and will be finalized after real usage testing.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+      <article style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:20px;padding:30px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(18,63,53,.12)">
+        <h3 style="font-size:18px;font-weight:800;margin:0 0 10px">FIT Free</h3>
+        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ priceFree }}<small style="font-size:13px;color:#5b716a;font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
+        <p style="color:#5b716a;font-size:13.5px;margin:8px 0 20px">Essential scanning, safety information, and manual tracking</p>
+        <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+          <li>✓ Food and ingredient insights</li><li>✓ Basic workout and meal logs</li><li>✓ Private progress profile</li><li style="color:#5b716a">— No server AI allowance</li>
+        </ul>
+        <a href="#beta" style="display:block;text-align:center;border:1px solid #123f35;color:#123f35;border-radius:8px;padding:13px;font-weight:700;font-size:13.5px;text-decoration:none;transition:background .2s,color .2s" style-hover="background:#123f35;color:#fffdf8">Join beta ↗</a>
+      </article>
+      <article style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:20px;padding:30px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(18,63,53,.12)">
+        <h3 style="font-size:18px;font-weight:800;margin:0 0 10px">FIT Plus</h3>
+        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ pricePlus }}<small style="font-size:13px;color:#5b716a;font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
+        <p style="color:#5b716a;font-size:13.5px;margin:8px 0 20px">Complete nutrition, meal, grocery, and workout planning</p>
+        <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+          <li>✓ Meal, grocery, and pantry planning</li><li>✓ Adaptive workout plans</li><li>✓ Expanded nutrition tracking</li><li style="color:#5b716a">— 100 AI requests / month</li>
+        </ul>
+        <a href="#beta" style="display:block;text-align:center;border:1px solid #123f35;color:#123f35;border-radius:8px;padding:13px;font-weight:700;font-size:13.5px;text-decoration:none;transition:background .2s,color .2s" style-hover="background:#123f35;color:#fffdf8">Join beta ↗</a>
+      </article>
+      <article style="background:#123f35;color:#fff;border-radius:20px;padding:30px;position:relative;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:0 22px 50px rgba(8,44,37,.35)">
+        <span style="position:absolute;top:-12px;left:24px;background:#c7f25b;color:#082c25;border-radius:6px;padding:5px 10px;font:800 10px 'Geist Mono',monospace;letter-spacing:.5px">MOST COMPLETE</span>
+        <h3 style="font-size:18px;font-weight:800;margin:10px 0 10px">FIT Coach</h3>
+        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ priceCoach }}<small style="font-size:13px;color:rgba(255,255,255,.6);font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
+        <p style="color:rgba(255,255,255,.7);font-size:13.5px;margin:8px 0 20px">Interactive TOBURT coaching and adaptive progress reviews</p>
+        <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+          <li>✓ Post-set coaching check-ins</li><li>✓ Progress-based plan reviews</li><li>✓ Ingredient explanations on demand</li><li style="color:rgba(255,255,255,.65)">— 500 AI requests / month</li>
+        </ul>
+        <a href="#beta" style="display:block;text-align:center;background:#c7f25b;color:#082c25;border-radius:8px;padding:13px;font-weight:800;font-size:13.5px;text-decoration:none;transition:background .2s" style-hover="background:#dbfa8e">Join beta ↗</a>
+      </article>
+    </div>
+    <p style="text-align:center;color:#5b716a;font-size:12px;margin-top:28px">Planned pricing shown for product research. Subscriptions are disabled during beta and no payment will be taken.</p>
+  </div>
+</section>
+</sc-if>
+
+<section id="beta" style="position:relative;padding:110px clamp(20px,4vw,48px);overflow:hidden">
+  <div style="position:absolute;inset:0;z-index:0"><image-slot id="photo-beta" shape="rect" src="assets/beta.png" placeholder="Photo: wide gym or outdoor training shot, low light" style="width:100%;height:100%;color:#f6f3ea"></image-slot></div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,44,37,.96) 0%,rgba(8,44,37,.82) 45%,rgba(8,44,37,.35) 100%)"></div>
+  <div data-m="split" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center">
+    <div>
+      <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#c7f25b">PRIVATE BETA · IPHONE</span>
+      <h2 style="font-size:clamp(32px,4.2vw,54px);font-weight:800;letter-spacing:-1.6px;color:#f6f3ea;margin:16px 0 22px;line-height:1.06">Help shape what<br/>health guidance <em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#c7f25b">should feel like.</em></h2>
+      <p style="color:rgba(246,243,234,.8);font-size:16px;line-height:1.7;max-width:520px;margin:0 0 28px">FIT is beginning with invited iPhone testers. Test the connected routine, tell us what feels unclear, and help us build something genuinely useful.</p>
+      <a href="mailto:support@toburt.com?subject=FIT%20Beta%20Access" style="background:#c7f25b;color:#082c25;border-radius:8px;padding:16px 24px;font-size:14px;font-weight:800;text-decoration:none;display:inline-block;transition:transform .2s,background .25s" style-hover="background:#dbfa8e;transform:translateY(-2px)">Request beta access ↗</a>
+    </div>
+    <form id="beta-form" style="background:#fffdf8;border-radius:20px;padding:26px;text-align:left;box-shadow:0 25px 60px rgba(0,0,0,.3);display:grid;grid-template-columns:1fr 1fr;gap:14px" novalidate>
+      <div style="grid-column:1/-1">
+        <b style="display:block;color:#123f35;font-size:20px">Request an invitation</b>
+        <span style="display:block;color:#5b716a;font-size:12.5px;line-height:1.5;margin-top:5px">Tell us where to send private-beta updates.</span>
+      </div>
+      <label style="grid-column:1/-1;color:#123f35;font:700 11px 'Geist Mono',monospace">FULL NAME *
+        <input name="name" autocomplete="name" required maxlength="100" style="width:100%;margin-top:7px;padding:13px;border:1px solid #d9dfd9;border-radius:8px;font:500 15px 'Geist',sans-serif;box-sizing:border-box"/>
+      </label>
+      <label style="color:#123f35;font:700 11px 'Geist Mono',monospace">EMAIL *
+        <input name="email" type="email" autocomplete="email" required maxlength="254" style="width:100%;margin-top:7px;padding:13px;border:1px solid #d9dfd9;border-radius:8px;font:500 15px 'Geist',sans-serif;box-sizing:border-box"/>
+      </label>
+      <label style="color:#123f35;font:700 11px 'Geist Mono',monospace">PHONE <small style="font-weight:500">(OPTIONAL)</small>
+        <input name="phone" type="tel" autocomplete="tel" maxlength="40" style="width:100%;margin-top:7px;padding:13px;border:1px solid #d9dfd9;border-radius:8px;font:500 15px 'Geist',sans-serif;box-sizing:border-box"/>
+      </label>
+      <label style="grid-column:1/-1;color:#123f35;font:700 11px 'Geist Mono',monospace">YOUR DEVICE
+        <select name="deviceType" style="width:100%;margin-top:7px;padding:13px;border:1px solid #d9dfd9;border-radius:8px;background:white;font:500 15px 'Geist',sans-serif;color:#123f35"><option value="iPhone">iPhone</option><option value="Android">Android</option><option value="Both">Both</option></select>
+      </label>
+      <label style="position:absolute;left:-10000px" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"/></label>
+      <label style="grid-column:1/-1;display:flex;gap:9px;align-items:flex-start;color:#5b716a;font-size:11.5px;line-height:1.45"><input name="consent" type="checkbox" required style="margin-top:2px;accent-color:#2e8767"/>I agree to receive FIT beta invitations and product updates. I can unsubscribe at any time.</label>
+      <button id="beta-submit" type="submit" style="grid-column:1/-1;border:0;background:#c7f25b;color:#082c25;border-radius:8px;padding:15px;font:800 14px 'Geist',sans-serif;cursor:pointer">Request beta access ↗</button>
+      <p id="beta-status" role="status" aria-live="polite" style="display:none;grid-column:1/-1;margin:0;padding:11px;border-radius:8px;font-size:12.5px;line-height:1.45"></p>
+      <small style="grid-column:1/-1;color:#71817b;line-height:1.45">We use this information only to manage beta access and related updates. See our <a href="/privacy" style="color:#2e8767;text-decoration:underline">privacy policy</a>.</small>
+    </form>
+  </div>
+</section>
+
+<section id="faq" style="padding:90px clamp(20px,4vw,48px)">
+  <div style="max-width:1280px;margin:0 auto" data-reveal data-m="split">
+    <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">COMMON QUESTIONS</span>
+    <h2 style="font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1.5px;margin:14px 0 40px;line-height:1.06">Straight answers,<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">including the limits.</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px 40px">
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">What is FIT by TOBURT?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">FIT is a connected food, nutrition, meal-planning, grocery, workout, and accountability app. TOBURT is the AI coach layer that plans workouts, explains ingredients, and responds to how each set felt.</p>
+      </div>
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">Can I download FIT right now?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">FIT is in a private iPhone beta with invited testers. Use the beta request form above to be considered for the current test group.</p>
+      </div>
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">How does FIT score food?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">Every scan returns a serving-based food-quality score alongside separate nutrition, processing, and personal-fit scores, with confidence and evidence labels. Your goals cannot inflate a product's underlying score, and missing data stays missing rather than invented.</p>
+      </div>
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">How does FIT handle allergies?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">Saved allergens are checked on every scan and conflicts stay prominent. A conflict can change your personal verdict but never rewrites the objective nutrition calculation. Databases can be incomplete — always check the current physical package.</p>
+      </div>
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">Does FIT replace a doctor or dietitian?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">No. FIT is a general-wellness and educational product. FIT and TOBURT are not doctors, registered dietitians, physical therapists, or emergency services. Stop exercising and seek qualified help for pain or concerning symptoms.</p>
+      </div>
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">What will FIT cost?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">Planned tiers are FIT Free at $0, FIT Plus at $9.99/month, and FIT Coach at $19.99/month, with annual options. Pricing and AI allowances are research targets — subscriptions are disabled during beta and no payment is taken.</p>
+      </div>
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">Is my health data private?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">Health, allergy, body-composition, food, and workout data are private by default and never published automatically. AI requests run through an authenticated server gateway, and permanent account deletion is available in-app.</p>
+      </div>
+      <div style="border-top:1px solid #d9dfd9;padding-top:18px">
+        <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">Which devices does FIT support?</h3>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">The beta runs on iPhone through TestFlight. Android and iPad timing will be decided after the public iOS release.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#082c25;padding:64px clamp(20px,4vw,48px) 36px">
+  <div data-m="split" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px">
+    <div>
+      <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:14px">
+        <img src="assets/fit-mark.png" alt="" width="32" height="32"/>
+        <span style="display:flex;align-items:baseline;gap:6px"><b style="color:#f6f3ea;font-size:19px;font-weight:800">FIT</b><small style="color:rgba(246,243,234,.5);font:700 9px 'Geist Mono',monospace;letter-spacing:1.4px">by TOBURT</small></span>
+      </a>
+      <p style="color:rgba(246,243,234,.55);font-size:13.5px;line-height:1.6;max-width:330px;margin:0">Food, fitness, and progress — connected by intelligence that keeps the person in view.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <b style="color:#f6f3ea;font-size:13px;margin-bottom:4px">Explore</b>
+      <a href="#scan" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">FIT Scan</a>
+      <a href="#fuel" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">FIT Fuel</a>
+      <a href="#train" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">FIT Train</a>
+      <a href="#coach" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">TOBURT Coach</a>
+      <a href="#faq" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">FAQ</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <b style="color:#f6f3ea;font-size:13px;margin-bottom:4px">Help &amp; legal</b>
+      <a href="/support" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">Support</a>
+      <a href="/privacy" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">Privacy</a>
+      <a href="/terms" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">Terms</a>
+      <a href="/delete-account" style="color:rgba(246,243,234,.6);text-decoration:none;font-size:13.5px;transition:color .2s" style-hover="color:#c7f25b">Delete account</a>
+    </div>
+  </div>
+  <div style="max-width:1280px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);color:rgba(246,243,234,.4);font-size:12px;line-height:1.7">
+    FIT is a general-wellness and educational product. FIT and TOBURT are not doctors, dietitians, physical therapists, or emergency services. Product data and AI output can be incomplete — always check the current package for allergens.<br/>© 2026 TOBURT. FIT is in private beta.
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Get beta access&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showMembership&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;audienceTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Balanced&quot;,&quot;options&quot;:[&quot;Balanced&quot;,&quot;Performance-focused&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = { product: 0, day: 3, effort: 1, metric: 0, billing: "monthly", chat: 0, menuOpen: false };
+
+  data() {
+    if (this._data) return this._data;
+    this._data = {
+      products: [
+        { chip: "Peanut butter", mark: "PB", markBg: "linear-gradient(#c84d37 14%,#e7b66b 14%)", brand: "CREAMY PEANUT BUTTER · 16 OZ", verdict: "Mixed choice", score: 71, scoreBg: "#f8db76", confidence: "HIGH DATA",
+          meters: [["Nutrition", 82], ["Less processed", 46], ["Allergy match", 100], ["Goal fit", 68]],
+          findings: [["+", "#2e8767", "7g protein and 2g fiber per 2 tbsp serving"], ["!", "#b7791f", "Added sugar appears second on the ingredient list"], ["·", "#5b716a", "No conflicts with your saved allergens"]] },
+        { chip: "Greek yogurt", mark: "GY", markBg: "linear-gradient(#8fb3a6 40%,#e8eef0 40%)", brand: "PLAIN GREEK YOGURT · 32 OZ", verdict: "Great everyday choice", score: 88, scoreBg: "#c7f25b", confidence: "HIGH DATA",
+          meters: [["Nutrition", 91], ["Less processed", 84], ["Allergy match", 100], ["Goal fit", 86]],
+          findings: [["+", "#2e8767", "17g protein per serving, no added sugar"], ["+", "#2e8767", "Live cultures — relevant to your gut-health preference"], ["·", "#5b716a", "Contains milk, which is not one of your saved allergens"]] },
+        { chip: "Protein bar", mark: "BAR", markBg: "linear-gradient(#3f4a45 55%,#6b7a72 55%)", brand: "ALMOND PROTEIN BAR · 60 G", verdict: "Avoid for your profile", score: 54, scoreBg: "#e7b66b", confidence: "MODERATE DATA",
+          meters: [["Nutrition", 63], ["Less processed", 24], ["Allergy match", 0], ["Goal fit", 38]],
+          findings: [["✕", "#c84d37", "Contains almonds — conflicts with your tree-nut allergy"], ["!", "#b7791f", "Highly processed: isolates and sugar alcohols"], ["·", "#5b716a", "Check the current package; databases can be incomplete"]] }
+      ],
+      days: [
+        { d: "MON", slot: "DINNER", meal: "Turkey Chili & Brown Rice", macros: "610 kcal · 44g protein · 12g fiber", items: [["Ground turkey — 1 lb", false], ["Kidney beans — 2 cans", false], ["Brown rice — already in pantry", true]], packages: "2 PACKAGES · 0.3 LB EXPECTED LEFTOVER" },
+        { d: "TUE", slot: "DINNER", meal: "Chicken Burrito Bowls", macros: "580 kcal · 46g protein · 9g fiber", items: [["Chicken thighs — 1.5 lb", false], ["Black beans — 1 can", false], ["Cilantro — 1 bunch", false]], packages: "3 PACKAGES · 0.5 LB EXPECTED LEFTOVER" },
+        { d: "WED", slot: "LUNCH", meal: "Lentil Soup & Sourdough", macros: "495 kcal · 24g protein · 15g fiber", items: [["Green lentils — 1 lb", false], ["Carrots — 4", false], ["Stock — already in pantry", true]], packages: "2 PACKAGES · 0.6 LB EXPECTED LEFTOVER" },
+        { d: "THU", slot: "DINNER", meal: "Sheet-Pan Salmon & Broccoli", macros: "520 kcal · 42g protein · 7g fiber", items: [["Salmon fillets — 2 (12 oz)", false], ["Broccoli — 1 head", false], ["Olive oil — already in pantry", true]], packages: "1 PACKAGE · 0 LB EXPECTED LEFTOVER" },
+        { d: "FRI", slot: "DINNER", meal: "Steak Tacos & Lime Slaw", macros: "640 kcal · 38g protein · 8g fiber", items: [["Flank steak — 1 lb", false], ["Cabbage — 1 head", false], ["Corn tortillas — 1 pack", false]], packages: "3 PACKAGES · 0.2 LB EXPECTED LEFTOVER" },
+        { d: "SAT", slot: "DINNER", meal: "Shrimp & Vegetable Stir-Fry", macros: "505 kcal · 40g protein · 6g fiber", items: [["Shrimp — 1 lb", false], ["Snap peas — 12 oz", false], ["Jasmine rice — already in pantry", true]], packages: "2 PACKAGES · 0.4 LB EXPECTED LEFTOVER" },
+        { d: "SUN", slot: "BREAKFAST", meal: "Egg & Vegetable Frittata", macros: "430 kcal · 31g protein · 5g fiber", items: [["Eggs — 10", false], ["Spinach — 5 oz", false], ["Feta — 4 oz", false]], packages: "2 PACKAGES · 2 EGGS EXPECTED LEFTOVER" }
+      ],
+      efforts: [
+        { label: "Too easy", reply: "Add 5 lb on the next set and keep the same rep target.", safety: false },
+        { label: "Just right", reply: "Keep the weight. Aim for one clean rep more.", safety: false },
+        { label: "Difficult", reply: "Hold this weight and rest 30 seconds longer before the next set.", safety: false },
+        { label: "Pain or discomfort", reply: "Stop this exercise now. Pain guidance is deterministic — FIT never tells you to push through it, and this response never waits on AI.", safety: true }
+      ],
+      metrics: [
+        { label: "Weight", delta: "−3.2 lb", sub: "Entered at your weekly check-in", bars: [68, 72, 70, 64, 61, 58, 55, 50] },
+        { label: "Sessions", delta: "22 of 24", sub: "Completed workouts across eight weeks", bars: [50, 75, 100, 75, 100, 100, 75, 100] },
+        { label: "Energy", delta: "8 / 10", sub: "Self-reported at your weekly check-in", bars: [40, 55, 50, 65, 60, 75, 70, 85] }
+      ],
+      chat: [
+        { who: "FIT", text: "Set 3 of 4 complete — Bench Press · 8 reps @ 135 lb", kind: "app" },
+        { who: "TOBURT", text: "How did that feel?", kind: "coach" },
+        { who: "YOU", text: "Just right", kind: "you" },
+        { who: "TOBURT", text: "Keep the weight. Aim for one clean rep more.", kind: "coach" },
+        { who: "YOU", text: "Slight pinch in my left shoulder that time", kind: "you" },
+        { who: "TOBURT", text: "Stop this exercise. Pain guidance is deterministic — swap to a neutral-grip press or end here.", kind: "safety" }
+      ],
+      chatStyles: {
+        app: { align: "center", bg: "transparent", border: "rgba(255,255,255,.12)", color: "rgba(246,243,234,.6)", labelColor: "rgba(246,243,234,.4)" },
+        coach: { align: "flex-start", bg: "#123f35", border: "rgba(199,242,91,.25)", color: "#f6f3ea", labelColor: "#c7f25b" },
+        you: { align: "flex-end", bg: "#f6f3ea", border: "#f6f3ea", color: "#123f35", labelColor: "#5b716a" },
+        safety: { align: "flex-start", bg: "#3a1d16", border: "#c84d37", color: "#f6f3ea", labelColor: "#e8927c" }
+      }
+    };
+    return this._data;
+  }
+
+  meterColor(v) { return v >= 70 ? "#2e8767" : v >= 40 ? "#e7b66b" : "#c84d37"; }
+
+  componentDidMount() {
+    document.documentElement.lang = "en";
+    document.title = "FIT by TOBURT — AI Food Scanning, Meal Planning & Adaptive Workouts";
+
+    const OV = {
+      "nav": "height:64px;padding:0 16px",
+      "nav-links": "display:none",
+      "nav-toggle": "display:block;min-height:46px;padding:12px 16px;font-size:16px",
+      "tap": "min-height:46px;padding:12px 18px;font-size:14px",
+      "day-chip": "min-height:44px;flex:1 0 auto;padding:11px 12px;font-size:12px",
+      "hide-phone": "display:none",
+      "hero-section": "min-height:0;padding-bottom:52px",
+      "hero-pad": "padding:104px 20px 34px",
+      "hero-card": "position:relative;right:auto;bottom:auto;width:auto;max-width:340px;margin:0 auto",
+      "split": "grid-template-columns:minmax(0,1fr);gap:34px",
+      "visual": "min-height:0;min-width:0;width:100%;display:flex;flex-direction:column",
+      "visual-photo": "position:relative;inset:auto;height:300px;width:100%;border-radius:20px",
+      "visual-card": "position:relative;left:auto;right:auto;bottom:auto;width:auto;max-width:none;box-sizing:border-box;margin:-38px 8px 0"
+    };
+    const OVP = {};
+    Object.keys(OV).forEach(k => {
+      OVP[k] = OV[k].split(";").filter(Boolean).map(rule => {
+        const i = rule.indexOf(":");
+        return [rule.slice(0, i).trim(), rule.slice(i + 1).trim()];
+      });
+    });
+    this._phone = window.innerWidth < 860;
+    this._apply = el => {
+      const k = el.getAttribute("data-m");
+      if (k && OVP[k]) {
+        if (!el.__base) {
+          el.__base = {};
+          OVP[k].forEach(pair => { el.__base[pair[0]] = el.style.getPropertyValue(pair[0]); });
+        }
+        OVP[k].forEach(pair => {
+          el.style.setProperty(pair[0], this._phone ? pair[1] : (el.__base[pair[0]] || ""));
+        });
+      }
+      if (el.hasAttribute("data-reveal")) {
+        el.style.transition = "opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1)";
+        el.style.opacity = el.dataset.shown === "1" ? "1" : "0";
+        el.style.transform = el.dataset.shown === "1" ? "none" : "translateY(22px)";
+      }
+    };
+    this._applyAll = () => { Array.from(document.querySelectorAll("[data-m],[data-reveal]")).forEach(this._apply); };
+    this._applyAll();
+    this._paint();
+
+    this._io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.dataset.shown = "1";
+          this._apply(e.target);
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(el => this._io.observe(el));
+
+    this._onResize = () => {
+      const p = window.innerWidth < 860;
+      if (p !== this._phone) {
+        this._phone = p;
+        this._applyAll();
+        this._paint();
+        if (!p && this.state.menuOpen) this.setState({ menuOpen: false });
+      }
+    };
+    window.addEventListener("resize", this._onResize);
+
+    this._onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const bar = document.getElementById("scroll-progress");
+      if (bar) bar.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + "%";
+      const photo = document.getElementById("hero-photo-wrap");
+      if (photo) photo.style.transform = "translateY(" + Math.min(y * 0.15, 90) + "px)";
+      const ids = ["scan", "fuel", "train", "progress", "coach", "membership"];
+      let active = "";
+      ids.forEach(id => {
+        const s = document.getElementById(id);
+        if (s && s.getBoundingClientRect().top <= 160) active = id;
+      });
+      ids.forEach(id => {
+        const a = document.querySelector('[data-nav="' + id + '"]');
+        if (a) a.style.color = active === id ? "#c7f25b" : "rgba(246,243,234,.78)";
+      });
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+
+    this._timer = setInterval(() => {
+      this.setState(s => ({ chat: s.chat >= 8 ? 0 : s.chat + 1 }));
+    }, 1500);
+  }
+
+  componentDidUpdate() {
+    if (this._applyAll) this._applyAll();
+    this._paint();
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
+    if (this._onResize) window.removeEventListener("resize", this._onResize);
+    if (this._timer) clearInterval(this._timer);
+  }
+
+  _paint() {
+    const d = this.data(), st = this._view || this.state;
+    const all = q => Array.from(document.querySelectorAll(q));
+    const set = (el, styles) => { if (el) Object.assign(el.style, styles); };
+
+    all('[data-chip="product"]').forEach((el, i) => set(el, {
+      background: st.product === i ? "#123f35" : "transparent",
+      color: st.product === i ? "#fffdf8" : "#123f35",
+      borderColor: st.product === i ? "#123f35" : "#d9dfd9"
+    }));
+    all('[data-chip="day"]').forEach((el, i) => set(el, {
+      background: st.day === i ? "#123f35" : "transparent",
+      color: st.day === i ? "#fffdf8" : "#5b716a",
+      borderColor: st.day === i ? "#123f35" : "#d9dfd9"
+    }));
+    all('[data-chip="effort"]').forEach((el, i) => {
+      const on = st.effort === i, danger = !!(d.efforts[i] && d.efforts[i].safety);
+      set(el, {
+        background: on ? (danger ? "#c84d37" : "#c7f25b") : "transparent",
+        color: on ? (danger ? "#fffdf8" : "#082c25") : "#123f35",
+        borderColor: on ? (danger ? "#c84d37" : "#c7f25b") : "#d9dfd9"
+      });
+    });
+    all('[data-chip="metric"]').forEach((el, i) => set(el, {
+      background: st.metric === i ? "#123f35" : "transparent",
+      color: st.metric === i ? "#fffdf8" : "#123f35",
+      borderColor: st.metric === i ? "#123f35" : "#d9dfd9"
+    }));
+    all('[data-chip="billing"]').forEach((el, i) => {
+      const on = (i === 0) === (st.billing === "monthly");
+      set(el, { background: on ? "#123f35" : "transparent", color: on ? "#fffdf8" : "#123f35" });
+    });
+
+    const p = d.products[st.product];
+    set(document.querySelector("[data-mark]"), { background: p.markBg });
+    set(document.querySelector("[data-score]"), { background: p.scoreBg });
+    all("[data-fill]").forEach((el, i) => {
+      const m = p.meters[i];
+      if (m) set(el, { width: m[1] + "%", background: this.meterColor(m[1]) });
+    });
+    all("[data-find]").forEach((el, i) => {
+      const f = p.findings[i];
+      if (f) set(el, { color: f[1] });
+    });
+
+    const day = d.days[st.day];
+    all("[data-item]").forEach((el, i) => {
+      const it = day.items[i];
+      if (it) set(el, { color: it[1] ? "#2e8767" : "#123f35" });
+    });
+
+    const e = d.efforts[st.effort];
+    set(document.querySelector("[data-effort-box]"), { background: e.safety ? "#fdf1ee" : "#eef4ec", borderColor: e.safety ? "#c84d37" : "#cfe0d6" });
+    set(document.querySelector("[data-effort-label]"), { color: e.safety ? "#c84d37" : "#2e8767" });
+    set(document.querySelector("[data-effort-text]"), { color: e.safety ? "#8f2f1c" : "#123f35" });
+    set(document.querySelector("[data-effort-card]"), { background: e.safety ? "#c84d37" : "#123f35" });
+    set(document.querySelector("[data-effort-card-label]"), { color: e.safety ? "#ffdfd6" : "#c7f25b" });
+
+    const mt = d.metrics[st.metric];
+    all("[data-bar]").forEach((el, i) => {
+      const v = mt.bars[i];
+      if (v != null) set(el, { height: v + "%", background: i === mt.bars.length - 1 ? "#c7f25b" : i >= mt.bars.length - 4 ? "#2e8767" : "#c2d9cd" });
+    });
+
+    all("[data-chat]").forEach((el, i) => {
+      const c = d.chat[i];
+      if (!c) return;
+      const s = d.chatStyles[c.kind];
+      set(el, { alignSelf: s.align, background: s.bg, borderColor: s.border, color: s.color });
+      const lab = el.querySelector("[data-chat-label]");
+      if (lab) set(lab, { color: s.labelColor });
+    });
+  }
+
+  renderVals() {
+    const d = this.data(), st = this.state;
+    this._view = { product: st.product, day: st.day, effort: st.effort, metric: st.metric, billing: st.billing, chat: st.chat, menuOpen: st.menuOpen };
+    const ctaLabel = this.props.ctaLabel ?? "Get beta access";
+    const showMembership = this.props.showMembership ?? true;
+    const audienceTone = this.props.audienceTone ?? "Balanced";
+    const heroSub = audienceTone === "Performance-focused"
+      ? "Scan food, plan meals, follow adaptive training blocks, and track real output — one connected routine, coached by TOBURT."
+      : "Scan food, plan meals, follow adaptive workouts, and build a routine you can actually keep — one connected system, coached by TOBURT.";
+
+    const rp = d.products[st.product];
+    const product = {
+      brand: rp.brand, verdict: rp.verdict, score: rp.score, mark: rp.mark, confidence: rp.confidence,
+      meters: rp.meters.map(m => ({ label: m[0], pct: m[1] + "%" })),
+      findings: rp.findings.map(f => ({ tone: f[0], text: f[2] }))
+    };
+    const rd = d.days[st.day];
+    const day = {
+      d: rd.d, slot: rd.slot, meal: rd.meal, macros: rd.macros, packages: rd.packages,
+      items: rd.items.map(it => ({ t: it[0], box: it[1] ? "☐" : "☑" }))
+    };
+    const re = d.efforts[st.effort];
+    const rm = d.metrics[st.metric];
+    const annual = st.billing === "annual";
+    const shown = Math.min(st.chat, d.chat.length);
+
+    return {
+      ctaLabel, showMembership, heroSub,
+      products: d.products.map((p, i) => ({ chip: p.chip, select: () => this.setState({ product: i }) })),
+      product,
+      days: d.days.map((x, i) => ({ d: x.d, select: () => this.setState({ day: i }) })),
+      day,
+      efforts: d.efforts.map((x, i) => ({ label: x.label, select: () => this.setState({ effort: i }) })),
+      effortReply: re.reply,
+      effortLabel: re.safety ? "SAFETY RESPONSE · NO AI REQUIRED" : "TOBURT · NEXT SET",
+      metrics: d.metrics.map((x, i) => ({ label: x.label, select: () => this.setState({ metric: i }) })),
+      metric: { delta: rm.delta, sub: rm.sub, bars: rm.bars.map(() => ({})) },
+      priceFree: "$0",
+      pricePlus: annual ? "$99.99" : "$9.99",
+      priceCoach: annual ? "$199.99" : "$19.99",
+      billingSuffix: annual ? "/year" : "/month",
+      setMonthly: () => this.setState({ billing: "monthly" }),
+      setAnnual: () => this.setState({ billing: "annual" }),
+      chatVisible: d.chat.slice(0, shown).map(c => ({ who: c.who, text: c.text })),
+      chatTyping: shown < d.chat.length,
+      menuOpen: st.menuOpen,
+      menuIcon: st.menuOpen ? "✕ Close" : "☰ Menu",
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
+}
+</script>
+<script>
+(() => {
+  const endpoint = "https://wvhnfnmndtnkjrhxfqbf.supabase.co/functions/v1/beta-interest";
+  const form = document.getElementById("beta-form");
+  const button = document.getElementById("beta-submit");
+  const status = document.getElementById("beta-status");
+  if (!form || !button || !status) return;
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const values = new FormData(form);
+    button.disabled = true;
+    button.textContent = "Sending request…";
+    status.style.display = "none";
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: values.get("name"), email: values.get("email"), phone: values.get("phone"),
+          deviceType: values.get("deviceType"), website: values.get("website"), consent: values.get("consent") === "on"
+        })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || "We could not send your request.");
+      form.reset();
+      status.textContent = result.message || "You’re on the list. Watch your email for beta access updates.";
+      status.style.background = "#e8f4e8";
+      status.style.color = "#123f35";
+      status.style.display = "block";
+    } catch (error) {
+      status.textContent = error.message || "Something went wrong. Please try again.";
+      status.style.background = "#fce8e3";
+      status.style.color = "#8f2f1c";
+      status.style.display = "block";
+    } finally {
+      button.disabled = false;
+      button.textContent = "Request beta access ↗";
+    }
+  });
+})();
+</script>
+</body>
+</html>
