@@ -496,48 +496,58 @@
   <div style="max-width:1280px;margin:0 auto" data-reveal data-m="split">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px;flex-wrap:wrap">
       <div>
-        <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">PLANNED MEMBERSHIPS</span>
-        <h2 style="font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1.5px;margin:14px 0 0;line-height:1.06">Start simple.<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">Coach when ready.</em></h2>
+        <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#2e8767">FIT MEMBERSHIPS</span>
+        <h2 style="font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1.5px;margin:14px 0 0;line-height:1.06">Three days to try it.<br/><em style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;color:#2e8767">Then choose your FIT.</em></h2>
       </div>
       <div>
         <div style="display:inline-flex;background:#eef4ec;border-radius:999px;padding:4px;margin-bottom:14px">
+          <button type="button" data-chip="billing" data-m="tap" onClick="{{ setWeekly }}" style="cursor:pointer;border:0;border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:700;font-family:'Geist',sans-serif;background:transparent;color:#123f35;transition:all .2s">Weekly</button>
           <button type="button" data-chip="billing" data-m="tap" onClick="{{ setMonthly }}" style="cursor:pointer;border:0;border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:700;font-family:'Geist',sans-serif;background:#123f35;color:#fffdf8;transition:all .2s">Monthly</button>
           <button type="button" data-chip="billing" data-m="tap" onClick="{{ setAnnual }}" style="cursor:pointer;border:0;border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:700;font-family:'Geist',sans-serif;background:transparent;color:#123f35;transition:all .2s">Annual</button>
         </div>
-        <p style="color:#5b716a;font-size:14px;max-width:330px;margin:0">Beta access is free today. Prices and AI allowances are research targets and will be finalized after real usage testing.</p>
+        <p style="color:#5b716a;font-size:14px;max-width:360px;margin:0">Every paid membership includes a 3-day trial. Beta testers currently receive Diamond-equivalent access without charge.</p>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
       <article style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:20px;padding:30px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(18,63,53,.12)">
-        <h3 style="font-size:18px;font-weight:800;margin:0 0 10px">FIT Free</h3>
-        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ priceFree }}<small style="font-size:13px;color:#5b716a;font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
-        <p style="color:#5b716a;font-size:13.5px;margin:8px 0 20px">Essential scanning, safety information, and manual tracking</p>
+        <h3 style="font-size:18px;font-weight:800;margin:0 0 10px">FIT Scanner</h3>
+        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ priceScanner }}<small style="font-size:13px;color:#5b716a;font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
+        <p style="color:#5b716a;font-size:13.5px;margin:8px 0 20px">Food scanning, ingredient insights, and everyday tracking</p>
         <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;font-size:13.5px">
-          <li>✓ Food and ingredient insights</li><li>✓ Basic workout and meal logs</li><li>✓ Private progress profile</li><li style="color:#5b716a">— No server AI allowance</li>
+          <li>✓ Unlimited barcode scans</li><li>✓ Nutrition and ingredient insights</li><li>✓ Meal, workout, and progress logs</li><li style="color:#5b716a">— No generative AI credits</li>
         </ul>
         <a href="#beta" style="display:block;text-align:center;border:1px solid #123f35;color:#123f35;border-radius:8px;padding:13px;font-weight:700;font-size:13.5px;text-decoration:none;transition:background .2s,color .2s" style-hover="background:#123f35;color:#fffdf8">Join beta ↗</a>
       </article>
       <article style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:20px;padding:30px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(18,63,53,.12)">
-        <h3 style="font-size:18px;font-weight:800;margin:0 0 10px">FIT Plus</h3>
-        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ pricePlus }}<small style="font-size:13px;color:#5b716a;font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
-        <p style="color:#5b716a;font-size:13.5px;margin:8px 0 20px">Complete nutrition, meal, grocery, and workout planning</p>
+        <h3 style="font-size:18px;font-weight:800;margin:0 0 10px">FIT Pro</h3>
+        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ pricePro }}<small style="font-size:13px;color:#5b716a;font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
+        <p style="color:#5b716a;font-size:13.5px;margin:8px 0 20px">AI meal planning without live workout coaching</p>
         <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;font-size:13.5px">
-          <li>✓ Meal, grocery, and pantry planning</li><li>✓ Adaptive workout plans</li><li>✓ Expanded nutrition tracking</li><li style="color:#5b716a">— 100 AI requests / month</li>
+          <li>✓ Everything in Scanner</li><li>✓ 100 food AI credits / month</li><li>✓ One personalized AI workout plan</li><li style="color:#5b716a">— Additional plan rebuild sold separately</li>
         </ul>
         <a href="#beta" style="display:block;text-align:center;border:1px solid #123f35;color:#123f35;border-radius:8px;padding:13px;font-weight:700;font-size:13.5px;text-decoration:none;transition:background .2s,color .2s" style-hover="background:#123f35;color:#fffdf8">Join beta ↗</a>
       </article>
       <article style="background:#123f35;color:#fff;border-radius:20px;padding:30px;position:relative;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:0 22px 50px rgba(8,44,37,.35)">
-        <span style="position:absolute;top:-12px;left:24px;background:#c7f25b;color:#082c25;border-radius:6px;padding:5px 10px;font:800 10px 'Geist Mono',monospace;letter-spacing:.5px">MOST COMPLETE</span>
-        <h3 style="font-size:18px;font-weight:800;margin:10px 0 10px">FIT Coach</h3>
-        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ priceCoach }}<small style="font-size:13px;color:rgba(255,255,255,.6);font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
-        <p style="color:rgba(255,255,255,.7);font-size:13.5px;margin:8px 0 20px">Interactive TOBURT coaching and adaptive progress reviews</p>
+        <span style="position:absolute;top:-12px;left:24px;background:#c7f25b;color:#082c25;border-radius:6px;padding:5px 10px;font:800 10px 'Geist Mono',monospace;letter-spacing:.5px">POPULAR</span>
+        <h3 style="font-size:18px;font-weight:800;margin:10px 0 10px">FIT Platinum</h3>
+        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ pricePlatinum }}<small style="font-size:13px;color:rgba(255,255,255,.6);font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
+        <p style="color:rgba(255,255,255,.7);font-size:13.5px;margin:8px 0 20px">AI meals plus interactive TOBURT workout coaching</p>
         <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;font-size:13.5px">
-          <li>✓ Post-set coaching check-ins</li><li>✓ Progress-based plan reviews</li><li>✓ Ingredient explanations on demand</li><li style="color:rgba(255,255,255,.65)">— 500 AI requests / month</li>
+          <li>✓ Everything in Pro</li><li>✓ 100 food AI credits / month</li><li>✓ 200 coaching credits / month</li><li>✓ One personalized AI workout plan</li>
         </ul>
         <a href="#beta" style="display:block;text-align:center;background:#c7f25b;color:#082c25;border-radius:8px;padding:13px;font-weight:800;font-size:13.5px;text-decoration:none;transition:background .2s" style-hover="background:#dbfa8e">Join beta ↗</a>
       </article>
+      <article style="background:#fffdf8;border:1px solid #d9dfd9;border-radius:20px;padding:30px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(18,63,53,.12)">
+        <h3 style="font-size:18px;font-weight:800;margin:0 0 10px">FIT Diamond</h3>
+        <div style="font-size:34px;font-weight:800;margin-bottom:4px;letter-spacing:-1px">{{ priceDiamond }}<small style="font-size:13px;color:#5b716a;font-weight:600;letter-spacing:0">{{ billingSuffix }}</small></div>
+        <p style="color:#5b716a;font-size:13.5px;margin:8px 0 20px">The complete TOBURT experience with flexible usage</p>
+        <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+          <li>✓ Everything in Platinum</li><li>✓ 500 flexible food or coaching credits</li><li>✓ Two AI workout plans / month</li><li>✓ Highest monthly AI allowance</li>
+        </ul>
+        <a href="#beta" style="display:block;text-align:center;border:1px solid #123f35;color:#123f35;border-radius:8px;padding:13px;font-weight:700;font-size:13.5px;text-decoration:none">Join beta ↗</a>
+      </article>
     </div>
-    <p style="text-align:center;color:#5b716a;font-size:12px;margin-top:28px">Planned pricing shown for product research. Subscriptions are disabled during beta and no payment will be taken.</p>
+    <p style="text-align:center;color:#5b716a;font-size:12px;margin-top:28px">Paid subscriptions begin after the beta. App Store checkout will show the exact price and renewal period before purchase.</p>
   </div>
 </section>
 </sc-if>
@@ -605,7 +615,7 @@
       </div>
       <div style="border-top:1px solid #d9dfd9;padding-top:18px">
         <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">What will FIT cost?</h3>
-        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">Planned tiers are FIT Free at $0, FIT Plus at $9.99/month, and FIT Coach at $19.99/month, with annual options. Pricing and AI allowances are research targets — subscriptions are disabled during beta and no payment is taken.</p>
+        <p style="margin:0;color:#5b716a;font-size:14.5px;line-height:1.65">After a 3-day trial, monthly plans are FIT Scanner $6.99, Pro $19.99, Platinum $34.99, and Diamond $49.99. Weekly and discounted annual options are also available. Beta testers are not charged.</p>
       </div>
       <div style="border-top:1px solid #d9dfd9;padding-top:18px">
         <h3 style="font-size:17px;font-weight:800;margin:0 0 8px;letter-spacing:-.2px">Is my health data private?</h3>
@@ -847,7 +857,7 @@ class Component extends DCLogic {
       borderColor: st.metric === i ? "#123f35" : "#d9dfd9"
     }));
     all('[data-chip="billing"]').forEach((el, i) => {
-      const on = (i === 0) === (st.billing === "monthly");
+      const on = ["weekly", "monthly", "annual"][i] === st.billing;
       set(el, { background: on ? "#123f35" : "transparent", color: on ? "#fffdf8" : "#123f35" });
     });
 
@@ -929,10 +939,12 @@ class Component extends DCLogic {
       effortLabel: re.safety ? "SAFETY RESPONSE · NO AI REQUIRED" : "TOBURT · NEXT SET",
       metrics: d.metrics.map((x, i) => ({ label: x.label, select: () => this.setState({ metric: i }) })),
       metric: { delta: rm.delta, sub: rm.sub, bars: rm.bars.map(() => ({})) },
-      priceFree: "$0",
-      pricePlus: annual ? "$99.99" : "$9.99",
-      priceCoach: annual ? "$199.99" : "$19.99",
-      billingSuffix: annual ? "/year" : "/month",
+      priceScanner: st.billing === "weekly" ? "$2.99" : annual ? "$59.99" : "$6.99",
+      pricePro: st.billing === "weekly" ? "$7.99" : annual ? "$179.99" : "$19.99",
+      pricePlatinum: st.billing === "weekly" ? "$12.99" : annual ? "$299.99" : "$34.99",
+      priceDiamond: st.billing === "weekly" ? "$17.99" : annual ? "$449.99" : "$49.99",
+      billingSuffix: st.billing === "weekly" ? "/week" : annual ? "/year" : "/month",
+      setWeekly: () => this.setState({ billing: "weekly" }),
       setMonthly: () => this.setState({ billing: "monthly" }),
       setAnnual: () => this.setState({ billing: "annual" }),
       chatVisible: d.chat.slice(0, shown).map(c => ({ who: c.who, text: c.text })),
