@@ -963,7 +963,7 @@ class Component extends DCLogic {
     try {
       const response = await fetch(endpoint, {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": "text/plain;charset=UTF-8" },
         body: JSON.stringify({
           name: values.get("name"), email: values.get("email"), phone: values.get("phone"),
           deviceType: values.get("deviceType"), website: values.get("website"), consent: values.get("consent") === "on"
