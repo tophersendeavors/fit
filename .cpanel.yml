@@ -2,4 +2,15 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/soluykqf/public_html/fit/
-    - /bin/cp -R ./* $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp index-old.html $DEPLOYPATH
+    - /bin/cp favicon.png $DEPLOYPATH
+    - /bin/cp og.png $DEPLOYPATH
+    - /bin/cp image-slot.js $DEPLOYPATH
+    - /bin/cp support.js $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R brand $DEPLOYPATH
+    - /bin/cp -R delete-account $DEPLOYPATH
+    - /bin/cp -R privacy $DEPLOYPATH
+    - /bin/cp -R support $DEPLOYPATH
+    - /bin/cp -R terms $DEPLOYPATH
