@@ -948,13 +948,14 @@ class Component extends DCLogic {
 <script>
 (() => {
   const endpoint = "https://wvhnfnmndtnkjrhxfqbf.supabase.co/functions/v1/beta-interest";
-  const form = document.getElementById("beta-form");
-  const button = document.getElementById("beta-submit");
-  const status = document.getElementById("beta-status");
-  if (!form || !button || !status) return;
-  form.addEventListener("submit", async (event) => {
+  document.addEventListener("submit", async (event) => {
+    const form = event.target;
+    if (!(form instanceof HTMLFormElement) || form.id !== "beta-form") return;
     event.preventDefault();
     if (!form.reportValidity()) return;
+    const button = form.querySelector("#beta-submit");
+    const status = form.querySelector("#beta-status");
+    if (!(button instanceof HTMLButtonElement) || !(status instanceof HTMLElement)) return;
     const values = new FormData(form);
     button.disabled = true;
     button.textContent = "Sending request…";
