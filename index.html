@@ -13,7 +13,7 @@
 <title>FIT by TOBURT — AI Food Scanning, Meal Planning &amp; Adaptive Workouts</title>
 <meta name="description" content="FIT by TOBURT is an AI health and fitness app: scan food labels for evidence-aware scores, turn approved meals into a real grocery list, and follow adaptive workouts. Private iPhone beta.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<meta name="theme-color" content="#123F35">
+<meta name="theme-color" content="#090b0a">
 <meta name="apple-mobile-web-app-title" content="FIT">
 <meta name="application-name" content="FIT by TOBURT">
 <link rel="canonical" href="https://fit.toburt.com/">
@@ -47,7 +47,7 @@
 {"@type":"Question","name":"How does FIT score food?","acceptedAnswer":{"@type":"Answer","text":"Each scan returns a serving-based food-quality score alongside separate nutrition, processing, and personal-fit scores, plus confidence and evidence labels. Your goals cannot inflate a product's underlying nutrition or processing score, and missing data stays missing rather than being invented."}},
 {"@type":"Question","name":"How does FIT handle allergies?","acceptedAnswer":{"@type":"Answer","text":"Saved allergens are cross-checked on every scan and conflicts stay prominent. Conflicts can change your personal verdict but never rewrite the objective nutrition calculation. Product databases can be incomplete or outdated, so always check the current physical package."}},
 {"@type":"Question","name":"Does FIT replace a doctor or dietitian?","acceptedAnswer":{"@type":"Answer","text":"No. FIT is a general-wellness and educational product. FIT and TOBURT are not doctors, registered dietitians, physical therapists, or emergency services. Stop exercising and seek qualified help for pain or concerning symptoms."}},
-{"@type":"Question","name":"What will FIT cost?","acceptedAnswer":{"@type":"Answer","text":"Planned tiers are FIT Free at $0, FIT Plus at $9.99 per month, and FIT Coach at $19.99 per month, with annual options. Pricing and AI allowances are research targets; subscriptions are disabled during beta and no payment is taken."}},
+{"@type":"Question","name":"What will FIT cost?","acceptedAnswer":{"@type":"Answer","text":"After a 3-day trial, planned monthly memberships are FIT Scanner at $6.99, Pro at $19.99, Platinum at $34.99, and Diamond at $49.99. Weekly and discounted annual options are also planned. Subscriptions are disabled during beta and beta testers are not charged."}},
 {"@type":"Question","name":"Is my health data private?","acceptedAnswer":{"@type":"Answer","text":"Yes. Health, allergy, body-composition, food, and workout data are private by default and never published automatically. AI requests run through an authenticated server gateway, and account deletion is available in-app."}}]}
 ]}
 </script>
@@ -66,7 +66,7 @@
 
 <div style="position:fixed;top:0;left:0;height:3px;width:0;background:#c7f25b;z-index:60" id="scroll-progress"></div>
 
-<header data-m="nav" style="position:sticky;top:0;z-index:50;background:rgba(8,44,37,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);height:78px">
+<header data-m="nav" style="position:sticky;top:0;z-index:50;background:rgba(8,10,9,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);height:78px">
   <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none">
     <img src="assets/fit-mark.png" alt="" width="32" height="32" style="object-fit:contain"/>
     <span style="display:flex;align-items:baseline;gap:6px">
@@ -103,8 +103,8 @@
   <div id="hero-photo-wrap" style="position:absolute;inset:-60px 0 0 0;z-index:0;will-change:transform">
     <image-slot id="hero-gym-photo" shape="rect" src="assets/hero-gym.png" placeholder="Photo: person training in the gym" style="width:100%;height:100%;color:#f6f3ea"></image-slot>
   </div>
-  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(8,44,37,.96) 0%,rgba(8,44,37,.86) 32%,rgba(8,44,37,.5) 56%,rgba(8,44,37,.12) 80%,rgba(8,44,37,.02) 100%)"></div>
-  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(8,44,37,.6) 0%,rgba(8,44,37,0) 34%)"></div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(5,6,6,.98) 0%,rgba(5,6,6,.92) 34%,rgba(5,6,6,.62) 58%,rgba(5,6,6,.2) 82%,rgba(5,6,6,.06) 100%)"></div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(5,6,6,.86) 0%,rgba(5,6,6,0) 42%)"></div>
 
   <div data-m="hero-pad" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:140px clamp(20px,4vw,48px) 180px">
     <div style="max-width:600px">
@@ -153,7 +153,7 @@
   </div>
 </section>
 
-<div style="background:#082c25;border-top:1px solid rgba(199,242,91,.2);border-bottom:1px solid rgba(199,242,91,.2);overflow:hidden;padding:14px 0">
+<div style="background:#090b0a;border-top:1px solid rgba(199,242,91,.2);border-bottom:1px solid rgba(199,242,91,.2);overflow:hidden;padding:14px 0">
   <div style="display:flex;width:max-content;animation:marquee 32s linear infinite">
     <div style="display:flex;gap:40px;padding-right:40px;font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:rgba(246,243,234,.55);white-space:nowrap">
       <span>SCAN A LABEL</span><span style="color:#c7f25b">●</span><span>APPROVE THE PLAN</span><span style="color:#c7f25b">●</span><span>BUILD THE LIST</span><span style="color:#c7f25b">●</span><span>TRAIN THE WEEK</span><span style="color:#c7f25b">●</span><span>LOG WHAT HAPPENED</span><span style="color:#c7f25b">●</span><span>ADAPT WITH CONTEXT</span><span style="color:#c7f25b">●</span>
@@ -554,7 +554,7 @@
 
 <section id="beta" style="position:relative;padding:110px clamp(20px,4vw,48px);overflow:hidden">
   <div style="position:absolute;inset:0;z-index:0"><image-slot id="photo-beta" shape="rect" src="assets/beta.png" placeholder="Photo: wide gym or outdoor training shot, low light" style="width:100%;height:100%;color:#f6f3ea"></image-slot></div>
-  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,44,37,.96) 0%,rgba(8,44,37,.82) 45%,rgba(8,44,37,.35) 100%)"></div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(5,6,6,.97) 0%,rgba(5,6,6,.88) 48%,rgba(5,6,6,.46) 100%)"></div>
   <div data-m="split" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center">
     <div>
       <span style="font:800 12px 'Geist Mono',monospace;letter-spacing:2px;color:#c7f25b">PRIVATE BETA · IPHONE</span>
@@ -629,7 +629,7 @@
   </div>
 </section>
 
-<footer style="background:#082c25;padding:64px clamp(20px,4vw,48px) 36px">
+<footer style="background:#090b0a;padding:64px clamp(20px,4vw,48px) 36px">
   <div data-m="split" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px">
     <div>
       <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:14px">
