@@ -9,6 +9,7 @@ deployment:
     - /bin/cp image-slot.js $DEPLOYPATH
     - /bin/cp support.js $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R auth $DEPLOYPATH
     - /bin/cp -R brand $DEPLOYPATH
     - /bin/cp -R delete-account $DEPLOYPATH
     - /bin/cp -R privacy $DEPLOYPATH
