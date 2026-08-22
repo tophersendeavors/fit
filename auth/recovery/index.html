@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Open FIT to reset your password</title>
+  <style>
+    :root{color-scheme:light;--cream:#f3f1e8;--ink:#123f35;--green:#2e8767;--lime:#c7f25b;--soft:#eef4ec;--line:#dbe4dd}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--cream);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:grid;place-items:center;padding:24px}
+    main{width:min(100%,560px);background:#fffdf8;border:1px solid var(--line);border-radius:28px;padding:32px;box-shadow:0 20px 60px rgba(18,63,53,.08)}
+    .mark{width:74px;height:74px;border-radius:24px;background:var(--ink);display:grid;place-items:center;margin-bottom:24px}.mark img{width:62px;height:62px;object-fit:contain}
+    .eyebrow{font-size:12px;font-weight:900;letter-spacing:1.7px;color:var(--green)}h1{font-size:clamp(34px,8vw,48px);line-height:1.02;letter-spacing:-1.8px;margin:10px 0 16px}p{font-size:17px;line-height:1.55;color:#536a62}
+    button,a.button{width:100%;border:0;border-radius:18px;background:var(--ink);color:#fffdf8;font:900 18px/1 inherit;padding:20px 22px;margin-top:16px;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:space-between}button span{width:44px;height:44px;border-radius:14px;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-size:26px}
+    .help{margin-top:20px;padding:16px;border-radius:16px;background:var(--soft);font-size:14px;line-height:1.5}.error{display:none;color:#8b4138;background:#fde9e5}.error.show{display:block}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark"><img src="/brand/fit-mark.png" alt=""></div>
+    <div class="eyebrow">SECURE ACCOUNT RECOVERY</div>
+    <h1>Finish in the FIT app.</h1>
+    <p>Your reset link was verified. Tap below to open FIT and choose your new password.</p>
+    <button id="open-fit" type="button">Open FIT <span aria-hidden="true">→</span></button>
+    <p id="error" class="help error">This link does not contain a valid recovery session. Return to FIT and request a new password-reset email.</p>
+    <p class="help">If FIT does not open, make sure the TestFlight app is installed, then return here and tap <strong>Open FIT</strong> again.</p>
+  </main>
+  <script>
+    (() => {
+      const destination = `nourishlens://reset-password${window.location.search}${window.location.hash}`;
+      const hasRecovery = /(?:[?#&])(?:access_token|refresh_token|code)=/i.test(`${window.location.search}${window.location.hash}`) || /(?:[?#&])type=recovery(?:&|$)/i.test(`${window.location.search}${window.location.hash}`);
+      const button = document.getElementById('open-fit');
+      const error = document.getElementById('error');
+      if (!hasRecovery) {
+        button.hidden = true;
+        error.classList.add('show');
+        return;
+      }
+      button.addEventListener('click', () => { window.location.href = destination; });
+    })();
+  </script>
+</body>
+</html>
